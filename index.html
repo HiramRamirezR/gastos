@@ -11,6 +11,10 @@
 <body>
 
 <div class="container">
+  <div id="app">
+    <button id="btn-login">Login con Google</button>
+    <button id="btn-logout" class="hidden">Cerrar sesión</button>
+  </div>
   <div id="inputs">
     <label for="cantidad">Cantidad</label>
     <input id="cantidad" type="number">
@@ -30,6 +34,34 @@
   <ul id="lista"></ul>
 </div>
 
-  <script src="app.js"></script>
+<!-- Firebase -->
+
+<script src="/__/firebase/8.10.1/firebase-auth.js"></script>
+<script src="/__/firebase/8.10.1/firebase-firestore.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDnTqfjzbAb75zMPWEKrYmUA79zvcgUZ8A",
+    authDomain: "control-de-gastos-8ffd0.firebaseapp.com",
+    projectId: "control-de-gastos-8ffd0",
+    storageBucket: "control-de-gastos-8ffd0.appspot.com",
+    messagingSenderId: "900857882991",
+    appId: "1:900857882991:web:51ea84da0fdb435ac9e09a",
+    measurementId: "G-WG43P1Y50P"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<script src="app.js" type="module"></script>
 </body>
 </html>
